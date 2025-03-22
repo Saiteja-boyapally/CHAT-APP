@@ -1,4 +1,5 @@
 Sigma Chat 💬
+https://chat-app---fireship.web.app/
 A real-time chat application built with React.js and Firebase that supports Google authentication and real-time messaging.
 
 Tech Stack
