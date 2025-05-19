@@ -57,7 +57,7 @@ function SignOut() {
 
 function ChatRoom() {
   const messagesRef = collection(firestore, "messages");
-  const q = query(messagesRef, orderBy("createdAt"), limit(25));
+  const q = query(messagesRef, orderBy("createdAt","desc"), limit(25));
   const [messages] = useCollectionData(q, { idField: "id" });
 
   const [formValue, setFormValue] = useState("");
@@ -90,7 +90,10 @@ function ChatRoom() {
   return (
     <>
       <div className='chat-container' ref={chatContainerRef}>
-        {messages && messages.map((msg) => <ChatMessage key={msg.id} message={msg} />)}
+        {/* {messages && messages.map((msg) => <ChatMessage key={msg.id} message={msg} />)} */}
+        {messages && messages.length > 0 && [...messages].reverse().map((msg) => (
+            <ChatMessage key={msg.id} message={msg} />
+          ))}
       </div>
       {/* <span ref={dummy}></span> */}
 
