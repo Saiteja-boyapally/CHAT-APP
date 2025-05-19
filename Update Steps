@@ -1,0 +1,14 @@
+✅ Steps to Update Code and Deploy
+Push latest code to GitHub:
+
+1. GIT COMMANDS
+git add .
+git commit -m "Updated features or bug fixes"
+git push origin main
+
+
+2. NPM
+npm run build
+
+3. FIREBASE
+firebase deploy --only hosting
